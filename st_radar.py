@@ -6,11 +6,11 @@ import matplotlib.pyplot as plt
 st.set_page_config(page_title = "Tableau de bord Effectifs étranger par service",
                    layout='wide'   )
 
-df = pd.read_excel('socle_rh_24.xlsx',sheet_name='Feuil1')
+df = pd.read_excel('socle_rh_242.xlsx',sheet_name='Feuil1')
 
 # NETTOYAGE DE DONNEES
 
-df = df[df['Cat Stat'] != "G0"]
+df = df[df['Cat LOLF'] != "G0"]
 df = df[['région', 'Pays', 'Correspondance', 'ETP']]
 
 df.dropna(inplace=True)
